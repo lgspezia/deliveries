@@ -24,7 +24,7 @@ export class SettlementsDetailComponent implements OnInit {
   mostrarModalMessage: boolean = false;
   mensagemModalMessage: string = '';
   indexedDb: any;
-  peopleStore: any[];
+  // peopleStore: any[];
 
   ngOnInit(): void {
 
@@ -32,40 +32,43 @@ export class SettlementsDetailComponent implements OnInit {
       this.indexedDb = self.indexedDB.open("settleDb", 1);
     }
 
+    // conecta-se ao banco
     this.indexedDb.onupgradeneeded = (event) => {
-      // create object store from db or event.target.result
+      // create object from event.target.result
       const data = event.target.result;
-      this.peopleStore = data.createObjectStore('people', {keyPath: 'id'});
+      // this.peopleStore = data.createObjectStore('people', {keyPath: 'id', autoIncrement: true});
 
-      const dbStore = data.resultcreateObjectStore("people", {keyPath: 'id'});
+      const dbStore = data.resultcreateObjectStore("people", {keyPath: 'id', autoIncrement: true});
       dbStore.createIndex('people_id_unqiue', 'id', {unique: true});
       const dataTransaction = this.indexedDb.transaction('people', 'readwrite');
       const dataStore = dataTransaction.objectStore('people');
       dataStore.getAll();
     }
 
+    // usado para criar ou abrir o banco
     this.indexedDb.onsuccess = (event) => {
       //sucesso ao criar/abrir o banco de dados
       let store: IDBDatabase = event.target.result;
-      // store = event.target.result;
       console.info(" indexedDb ", this.indexedDb.result.objectStoreNames);
-
-      const data = event.target.result;
       const transaction = this.indexedDb.result.transaction('people', 'readwrite');
       const dataStore = transaction.objectStore('people');
-      // dataStore.add();
-
-      // self.localStorage.forEach((element) => {
-      //   dataStore.add(element);
-      // });
+      // console.log(" teste ", JSON.stringify(this.settlementForm));
+      console.log(" teste ", this.settlementForm); // address // email
+      dataStore.add({
+        n: this.settlementForm.value.name, 
+        m: this.settlementForm.value.email,
+        k: this.settlementForm.value.phone,
+        a: this.settlementForm.value.address
+      });
     }
 
     this.indexedDb.onerror = (event) => {
-      //erro ao criar/abrir o banco de dados
       console.info(" Ocorreu um erro ", event.target.result);
     }
+    
 
     this.loadInfoData();
+    // this.peopleStore = this.getAllData();
   }
 
   criaFormSettlement(): void {
@@ -133,6 +136,14 @@ export class SettlementsDetailComponent implements OnInit {
     this.mensagemModalMessage = 'Os dados foram atualiados.';
     this.mostrarModalMessage = true;
   }
+
+  // getAllData(target: string) {
+  //   return this.indexedDb.then((db: any) => {
+  //     const tx = db.transaction(target, 'readonly');
+  //     const store = tx.objectStore(target);
+  //     return store.getAll();
+  //   });
+  // }
 
   closeAlert():void {
     this.mostrarModalMessage = false;
