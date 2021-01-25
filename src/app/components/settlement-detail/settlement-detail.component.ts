@@ -29,7 +29,6 @@ export class SettlementsDetailComponent implements OnInit {
   ngOnInit(): void {
 
     if(self.indexedDB){
-      console.log('IndexedDB is supported');
       this.indexedDb = self.indexedDB.open("settleDb", 1);
     }
 

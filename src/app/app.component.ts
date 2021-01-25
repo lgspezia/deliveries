@@ -18,7 +18,7 @@ export class AppComponent {
 
   title = 'establish-infos';
 
-  preparaRota(outlet: RouterOutlet) {
+  activeRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }
