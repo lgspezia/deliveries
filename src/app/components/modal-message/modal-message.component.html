@@ -1,0 +1,13 @@
+<div class="alerta-background" (click)="closeModalMessage()">
+    <div class="column alerta">
+        <div id="title" class="alerta-header">
+            <b>Sucesso!</b>
+        </div>
+        <div class="column alerta-corpo">
+                <p>{{ mensagem }}</p>
+            <div class="tx-center">
+                <button (click)="closeModalMessage()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>

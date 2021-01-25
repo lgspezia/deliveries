@@ -1,0 +1,40 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2em;
+}
+
+#settlement-list>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em;
+    color: #4C5164;
+    font-weight: 600;
+    font-size: large;
+}
+
+.loader {
+    margin: 1em;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #4C5164;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1.5s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

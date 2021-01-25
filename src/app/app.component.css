@@ -1,0 +1,14 @@
+main {
+    padding-top: 6vh;
+}
+
+main div {
+    max-width: 70vw;
+    margin: 2.5vh auto;
+}
+
+@media only screen and (max-width: 600px) {
+    main div {
+        max-width: 90vw;
+    }
+}

@@ -1,0 +1,16 @@
+:host {
+    width: 100%;
+}
+
+#settlement-not-found {
+    padding: 1.5em;
+}
+
+#settlement-not-found .row {
+    align-items: center;
+}
+
+h3 {
+    color: #4C5164;
+    margin: 0;
+}

@@ -1,0 +1,63 @@
+.alerta-background {
+    width: 100%;
+    height: 100%;
+    background-color: #0006;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alerta {
+    height: 30%;
+    width: 40%;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 2em;
+}
+
+.alerta-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alerta-corpo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+button {
+    border: 0;
+    border-radius: 50px;
+    color: #FFF;
+    background-color: #56dfb6;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    font-weight: 600;
+    align-self: flex-end;
+    margin-top: 2em;
+}
+
+button:hover {
+    box-shadow: 0px 0px 3px 1px #656f94;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .alerta {
+        height: 60%;
+        width: 70%;
+        padding: 1em;
+    }
+}
+
+.tx-center {
+  text-align: center;
+}

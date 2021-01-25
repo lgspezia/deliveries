@@ -1,0 +1,109 @@
+<div class="card settlement-detail">
+    <div class="row">
+        <app-back-button></app-back-button>
+        <app-logo-settlement [urlLogo]=settlement.picture></app-logo-settlement>
+        <div class="column info-estabelecimento" id="name">
+            {{ settlement.name }}
+            <span class="">ID: {{ settlement.id }}</span>
+        </div>
+    </div>
+    <div class="row">
+        <form [formGroup]="settlementForm" (ngSubmit)="updateItem()">
+            <section id="">
+                <app-title-section>Informações</app-title-section>
+                <div id="" class="inputs-secao">
+                    <div class="column">
+                        <label>Nome</label>
+                        <input type="text" formControlName="name" name="name" />
+                    </div>
+                    <div class="column">
+                        <label>Cidade</label>
+                        <input type="text" formControlName="cidade" name="cidade" />
+                    </div>
+                    <div class="column">
+                        <label>Endereço</label>
+                        <input type="text" formControlName="address" name="address" />
+                    </div>
+                </div>
+
+                <div class="inputs-secao">
+                  <div class="column">
+                    <label>Telefone</label>
+                    <input type="text" formControlName="phone" name="phone" />
+                </div>
+                <div class="column">
+                  <label>Latitude</label>
+                  <input type="text" class="" formControlName="latitude" readonly>
+                  </div>
+                  <div class="column">
+                    <label>Longitude</label>
+                    <!--{{ settlement.longitude }}-->
+                    <input type="text" class="" formControlName="longitude" readonly>
+                  </div>
+
+                </div>
+            </section>
+            <section id="">
+                <app-title-section>Dados financeiros</app-title-section>
+                <div id="financeiro" class="inputs-secao">
+                    <div class="column">
+                        <label>Bandeira</label>
+                        <select type="text" formControlName="banco" name="banco">
+                            <option value="master">Master</option>
+                            <option value="visa">Visa</option>
+                            <option value="amex">American Express</option>
+                            <option value="city">Citybank</option>
+                        </select>
+                    </div>
+                    <div class="column">
+                        <label>Tipo de conta</label>
+                        <select type="text" formControlName="tipoConta" name="tipoConta">
+                            <option value="contaCorrente">Conta corrente</option>
+                            <option value="poupanca">Poupança</option>
+                        </select>
+                    </div>
+                    <div class="column">
+                        <label>CPF / CNPJ</label>
+                        <input type="text" formControlName="cpfCnpj" name="cpfCnpj" appCpfCnpj />
+                    </div>
+                    <div class="column">
+                        <label>Agência</label>
+                        <div class="row">
+                            <input type="text" formControlName="agencia" name="agencia" maxlength="6" minlength="4" />
+                            <input type="text" formControlName="agenciaDv" name="agenciaDv" maxlength="1" />
+                        </div>
+                    </div>
+                    <!--<div class="column">
+                        <label>Conta</label>
+                        <div class="row">
+                            <input type="text" formControlName="conta" name="conta" maxlength="8" minlength="4" />
+                            <input type="text" formControlName="contaDv" name="contaDv" maxlength="1" />
+                        </div>
+                    </div>-->
+
+                    <div class="column">
+                      <label>Forma de Pagamento </label>
+                      <select type="text" formControlName="formaPgto" name="formaPgto">
+                        <option value="dinheiro">Dinheiro</option>
+                        <option value="crédito">Crédito</option>
+                          <option value="débito">Débito</option>
+                      </select>
+                  </div>
+
+                    <div class="column">
+                        <label>Pagamento Realizado</label>
+                        <select type="text" formControlName="pago" name="pago">
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+              <button type="submit">Salvar</button>
+
+        </form>
+    </div>
+</div>
+
+<modal-message *ngIf="mostrarModalMessage" [mensagem]="mensagemModalMessage" (closeAlert)="closeAlert()"></modal-message>

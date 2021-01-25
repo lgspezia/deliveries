@@ -1,0 +1,24 @@
+<a (click)="expandDetails()">
+    <div class="card card-estabelecimento">
+        <div class="row">
+            <app-logo-settlement [urlLogo]=settlement.picture></app-logo-settlement>
+            <div class="column" id="area-info">
+                <div class="estabelecimento">
+                    {{ settlement.name }}<span>{{ settlement.id }}</span>
+                </div>
+                <div class="endereco">
+                  <b class="column-sm">Cidade: </b>
+                    <span id="cidade">{{ settlement.cidade }}</span>
+                    <span class="separador"></span>{{ settlement.address }}
+                </div>
+
+                <div class="telefone column-sm">
+                  <b>Tel.: </b><span> {{ settlement.phone }}</span>
+                  <span class="separador"></span>
+                  <b>Email: </b><span> {{ settlement.email }}</span>
+
+              </div>
+            </div>
+        </div>
+    </div>
+</a>

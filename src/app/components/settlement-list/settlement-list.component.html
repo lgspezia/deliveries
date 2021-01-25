@@ -1,0 +1,14 @@
+<div id="settlement-list">
+    <div class="card" *ngIf="loadingList">
+        <div class="loader"></div>
+        Carregando lista
+    </div>
+    <div class="card" *ngIf="!loadingList && settlements.length == 0">
+        Nenhum estabelecimento cadastrado.
+    </div>
+    <ul *ngIf="!loadingList && settlements.length > 0">
+        <li *ngFor="let settlement of settlements">
+            <app-card-settlement [settlement]="settlement"></app-card-settlement>
+        </li>
+    </ul>
+</div>

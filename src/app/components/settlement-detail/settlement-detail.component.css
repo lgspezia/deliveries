@@ -1,0 +1,120 @@
+
+.settlement-detail {
+    padding: 1.5em;
+}
+
+.info-estabelecimento {
+    padding: .1em 1.5em;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 700;
+    font-size: 2em;
+    color: #4C5164;
+    word-break: break-all;
+}
+
+.info-estabelecimento span {
+    color: #81879C;
+    font-weight: 600;
+    font-size: small;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inputs-secao {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inputs-secao .column {
+    flex-basis: 31%;
+    max-width: 31%;
+}
+
+.inputs-secao label {
+    margin-top: 1.5em;
+    color: #4C5164;
+    font-weight: 600;
+    font-size: small;
+}
+
+.inputs-secao input,
+.inputs-secao select {
+    background-color: #FBFCFE;
+    border: 1px solid #E6E8F0;
+    border-radius: 5px;
+    padding: 1em;
+    margin: .7em 0em;
+    color: #7B7E8C;
+    font-weight: 600;
+}
+
+.inputs-secao input:hover,
+.inputs-secao input:focus,
+.inputs-secao select:hover,
+.inputs-secao select:focus {
+    box-shadow: 0px 0px 5px 1px #5b8074;
+    transition: .2s ease-in-out;
+}
+
+.inputs-secao select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('../../../assets/images/arrow_down.svg');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-position-x: 97.5%;
+    background-size: 2em;
+}
+
+form button {
+    border: 0;
+    border-radius: 50px;
+    color: #FFF;
+    background-color: #56dfb6;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    font-weight: 600;
+    text-align: center;
+    /*align-self: center;*/
+    align-self: flex-end;
+    margin-top: 6em;
+}
+
+form button:hover {
+    box-shadow: 0px 0px 3px 1px #656f94;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.inputs-secao .row input {
+    min-width: 0;
+}
+
+.inputs-secao .row input:nth-child(1) {
+    width: 35%;
+}
+
+.inputs-secao .row input:nth-child(2) {
+    width: 15%;
+    margin-left: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+    .inputs-secao {
+        flex-direction: column;
+    }
+
+    .inputs-secao .column {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,63 @@
+:host{
+    width: 100%;
+}
+
+.card-estabelecimento {
+    padding: .5em;
+    border: 1px solid #ffffff;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+a:hover .card-estabelecimento {
+    cursor: pointer;
+    border: 1px solid #56dfb6;
+}
+
+#area-info {
+    padding: 0em 1.5em;
+    justify-content: space-around;
+}
+
+.estabelecimento {
+    font-weight: 600;
+    font-size: large;
+    color: #4C5164;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.estabelecimento span {
+    margin-left: 1em;
+    font-size: small;
+}
+
+.estabelecimento span,
+.endereco {
+    color: #626569;
+}
+
+.telefone {
+  color: #696666;
+}
+
+.column-sm {
+  font-size: small;
+}
+
+.separador {
+    display: inline-block;
+    border-left: 2px solid #8f9096;
+    height: 10px;
+    border-radius: 4px;
+    margin: 0 .8em;
+}
+
+.endereco .cidade {
+    font-weight: 600;
+}
+
